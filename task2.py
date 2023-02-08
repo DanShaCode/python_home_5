@@ -10,32 +10,52 @@
 # b) Подумайте как наделить бота ""интеллектом""
 
 import os
+import time
+
+def player1 (candy_amount):
+
 
 def Game (candy_amount):
     os.system('cls||clear')
+    print("Начало нового раунда!")
     flag = 0
     if candy_amount > 0:
         print()
-        print("Количество конфет в начале раунда: ", candy_amount)
+        print("Количество конфет на столе: ", candy_amount)
         print()
         flag += 1
         player_1 = int(input("Ход Игрока_1. Введите количество конфет: "))
+    if player_1 < 1 or player_1 > 500:
+        print()
+        print("Количество конфет, которые вы берете не может быть меньше 0 или больше 28!")
+        time.sleep(2)
+    else:
         candy_amount -= player_1
         print()
-        print("Осталось на столе: ",candy_amount)
+        print("Количество конфет на столе: ", candy_amount)
         print()
     if candy_amount > 0:
+        os.system('cls||clear')
+        print("Начало нового раунда!")
+        print()
+        print("Количество конфет на столе: ", candy_amount)
+        print()
         flag -= 1
         player_2 = int(input("Ход Игрока_2. Введите количество конфет: "))
+    if player_2 < 1 or player_2 > 500:
+        print()
+        print("Количество конфет, которые вы берете не может быть меньше 0 или больше 28!")
+        time.sleep(2)
+        error2 += 1
+    elif error2 == 0:
         candy_amount -= player_2
     if candy_amount <= 0:
         if flag == 0:
-            print("Конец игры. Второй игрок выйграл!")
+            print()
+            print("Конец игры. Игрок_2 выйграл!")
         else:
-            print("Конец игры. Первый игрок выйграл!")
+            print("Конец игры. Игрок_1 выйграл!")
     elif candy_amount > 0:
-        print()
-        print("Осталось кофет: ", candy_amount)
         Game(candy_amount)
 
 Game(2021)
