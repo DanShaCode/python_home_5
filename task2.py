@@ -76,7 +76,7 @@ def Game (candy_amount):
         print("Игрок_2 победил!")
 
 print()
-print("Иигра началась!")
+print("Игра началась!")
 print()
 
 time.sleep(1)
