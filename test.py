@@ -146,6 +146,8 @@ def PlayerOneWin(candy_amount):
         print("Игра окончена.")
         print()
         print("Игрок_1 победил!")
+        time.sleep(2)
+        os.system('cls||clear')
 
 def BotWin(candy_amount):
     if candy_amount <= 0:
@@ -154,6 +156,8 @@ def BotWin(candy_amount):
         print("Игра окончена.")
         print()
         print("Бот победил!")
+        time.sleep(2)
+        os.system('cls||clear')
 
 def PlayerTwoWin(candy_amount):
     if candy_amount <= 0:
@@ -162,6 +166,16 @@ def PlayerTwoWin(candy_amount):
         print("Игра окончена.")
         print()
         print("Игрок_2 победил!")
+        time.sleep(2)
+        os.system('cls||clear')
+
+def GameType():
+    print()
+    print("Выберите режим игры.")
+    print()
+    print("1.Играть против ИИ")
+    print("2.Играть против Игрока")
+    print()
 
 def Start():
     if user_versus == 1:
@@ -181,27 +195,28 @@ def Start():
         
         Game(221)
 
-print()
-print("Добро пожаловать!")
-print()
-print("Вы запустили интерактивную игру 2021!")
-print()
-print("Хотите прочитать правила?")
-print()
-user_awnser = str(input("Введите Y/N: "))
-print()
-if user_awnser == 'Y' or user_awnser == 'y':
-    f = open("GameRules.txt", "r")
-    f_contents = f.read()
-    print(f_contents)
-    f.close()
+def Intro():
     print()
-    close = input("Нажмите Enter, как будете готовы начать игру")
-    os.system('cls||clear')
+    print("Добро пожаловать!")
     print()
-    print("Выберите режим игры.")
+    print("Вы запустили интерактивную игру 2021!")
     print()
-    print("1.Играть против ИИ")
-    print("2.Играть против Игрока")
-    user_versus = int(input("Введите номер режима сюда(1 или 2): "))
-    Start()
+    print("Хотите прочитать правила?")
+    print()
+    user_awnser = str(input("Введите Y/N: "))
+    print()
+    if user_awnser == 'Y' or user_awnser == 'y':
+        f = open("GameRules.txt", "r")
+        f_contents = f.read()
+        print(f_contents)
+        f.close()
+        print()
+        close = input("Нажмите Enter, как будете готовы начать игру")
+        os.system('cls||clear')
+    elif user_awnser == 'N' or user_awnser == 'n':
+        os.system('cls||clear')
+
+Intro()
+GameType()
+user_versus = int(input("Введите номер режима сюда(1 или 2): "))
+Start()
