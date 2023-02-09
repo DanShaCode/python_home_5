@@ -195,12 +195,13 @@ def Intro():
     user_awnser = str(input("Введите Y/N: "))
     print()
     if user_awnser == 'Y' or user_awnser == 'y':
+        os.system('cls||clear')
         f = open("GameRules.txt", "r")
         f_contents = f.read()
         print(f_contents)
         f.close()
         print()
-        close = input("Нажмите Enter, как будете готовы начать игру")
+        input("Нажмите Enter, как будете готовы начать игру")
         os.system('cls||clear')
     elif user_awnser == 'N' or user_awnser == 'n':
         os.system('cls||clear')
