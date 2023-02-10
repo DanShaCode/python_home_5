@@ -1,6 +1,6 @@
 from players import *
 
-def Print(board):
+def Board_Print(board):
     print()
     index = 0
     for i in board:
@@ -12,8 +12,4 @@ def Print(board):
             print(i, end = '  ')
             index += 1
     print()
-
-
-    
-
-    
+ 
