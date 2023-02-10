@@ -196,7 +196,7 @@ def Intro():
     print()
     if user_awnser == 'Y' or user_awnser == 'y':
         os.system('cls||clear')
-        f = open("GameRules.txt", "r")
+        f = open("game2021\Game_Rules.txt", "r")
         f_contents = f.read()
         print(f_contents)
         f.close()
