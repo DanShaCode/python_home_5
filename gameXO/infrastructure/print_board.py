@@ -1,4 +1,4 @@
-from players import *
+from infrastructure.players import *
 
 def Board_Print(board):
     print()

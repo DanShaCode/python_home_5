@@ -7,4 +7,6 @@ def Introduction():
     print()
     user_enter = input(("нажмите Enter для начала игры .... "))
     print()
+    start_board = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
     os.system('cs||clear')
+    return start_board

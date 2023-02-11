@@ -1,7 +1,6 @@
-from intro import *
-from print_board import *
-from game_round import *
+from infrastructure.intro import *
+from infrastructure.print_board import *
+from infrastructure.game_round import *
+from infrastructure.players import *
 
-Introduction()
-start_board = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
-Game_Round(start_board)
+Game_Round(Introduction())

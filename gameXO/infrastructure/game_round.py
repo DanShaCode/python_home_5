@@ -1,6 +1,6 @@
-from intro import *
-from print_board import *
-from players import *
+from infrastructure.intro import *
+from infrastructure.print_board import *
+from infrastructure.players import *
 import os
 
 def Game_Round(start_board):

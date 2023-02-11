@@ -1,6 +1,6 @@
 import os
 import time
-from print_board import *
+from infrastructure.print_board import *
 
 def First_Player(board):
     os.system('cs||clear')
