@@ -5,7 +5,7 @@ def Introduction ():
     print()
     print("Данная программа удаляет из текста все слова содержащие абв")
     print()
-    user_data = input("Введите текст сюда: ")
+    user_data = str(input("Введите текст сюда: "))
     print()
     text = user_data
     return text

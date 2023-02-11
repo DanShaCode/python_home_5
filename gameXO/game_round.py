@@ -21,7 +21,7 @@ def Game_Round(start_board):
         print("Ничья!")
         time.sleep(2)
         os.system('cs||clear')
-    else:
+    elif no_win_check_first == False and first_check == False:
         os.system('cs||clear')
         Board_Print(first_board)
         second_board = Second_PLayer(first_board)

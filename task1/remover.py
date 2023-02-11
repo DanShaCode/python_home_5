@@ -1,7 +1,6 @@
-def Abc_Remove(text):
+import re
+
+def Abc_Remover(text):
+    change_text = [re.sub("[абв]", "", text)]
     print()
-    text = text.split()
-    text = [i for i in text[:] if i != 'абв']
-    return text
-
-
+    print("Отредактированный текст: ", *change_text)
