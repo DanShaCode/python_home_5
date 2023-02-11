@@ -1,4 +1,3 @@
-from intro_task1 import *
-from remover import *
+from infrastruct.remover import ABC_Remover
 
-Abc_Remover(Introduction())
+ABC_Remover()
