@@ -169,8 +169,9 @@ def GameType():
 def Start():
     if user_versus == 1:
         os.system('cls||clear')
-        print("Игра началась!")
+        print("Игра скоро начнется.")
         print()
+        print("Загрузка ..... ")
 
         time.sleep(2)
         
