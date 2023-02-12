@@ -1,6 +1,24 @@
 import os
 
 os.system('cs||clear')
+
+def RLE(my_list):
+    count = 0
+    index = 0
+    list_len = len(my_list) - 1
+    symbol_amount = 0
+    symbol_counter = {}
+    while count < list_len:
+        if my_list[index] == my_list[index+1]:
+            print('Yes', my_list[index], end = ' ')
+            index +=1
+            count +=1
+            symbol_amount += 1
+        else:
+            symbol_amount += 1
+            symbol_counter [symbol_amount] = my_list[index] 
+            return symbol_counter
+
 text = 'aabbaaabbbcccbbbcccc'
 
 my_list = []
@@ -18,28 +36,5 @@ for i in my_list:
     print(ord(i), i, end = ' ')
 
 print()
-
-count = 0
-index = 0
-symbol_amount = 0
-
-list_len = len(my_list) - 1
-
 print()
-
-symbol_counter = {}
-
-while count < list_len:
-    if my_list[index] == my_list[index+1]:
-        print('Yes', my_list[index], end = ' ')
-        index +=1
-        count +=1
-        symbol_amount += 1
-    else:
-        symbol_amount += 1
-        symbol_counter [symbol_amount] = my_list[index] 
-        break
-
-print()
-print()
-print(symbol_counter)
+print(RLE(my_list))
