@@ -1,4 +1,13 @@
-my_list = ['a', 'a', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c']
+
+print()
+text = str(input("Введите, пожалуйста, текст: "))
+
+my_list = []
+
+for char in text:
+    my_list.append(char)
+
+my_list.sort()
 
 my_list.append('0')
 
@@ -18,6 +27,11 @@ for i in range(len(my_list)-1):
         symbol_counter = 0
         continue
 
-print()     
-print(result_counter)
-        
+result_list = []
+
+for key,value in result_counter.items():
+    result_list.append(str(value))
+    result_list.append(str(key))
+
+print()
+print(''.join(result_list))
