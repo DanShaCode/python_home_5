@@ -33,4 +33,6 @@ def Run_Length_Encoding(text):
         result_list.append(str(key))
 
     print()
-    print(''.join(result_list))
+    print("Сжатый текст: ", ''.join(result_list))
+
+    return result_list

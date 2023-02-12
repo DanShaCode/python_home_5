@@ -2,54 +2,37 @@ import os
 
 os.system('cs||clear')
 
-text = '5A5B'
+def Reverse_RLS(text):
+    words = []
+    numbers = []
 
-print()
-print("Изначальный текст: ", text)
+    for i in text:
+        if i.isalpha():
+            if not words or not last_isalpha:
+                words.append(i)
+            else:
+                words[-1] += i
+        else:
+            if not numbers or last_isalpha:
+                numbers.append(i)
+            else:
+                numbers[-1] += i
+        last_isalpha = i.isalpha()
 
-my_list = []
+    numbers = [int(i) for i in numbers]
+    words = [str(i) for i in words]
 
+    result_list = []
 
-for char in text:
-    my_list.append(char)
-
-print()
-print("Отдельные символы в списке: ", my_list)
-
-my_list_len = len(my_list)
-count = 0
-
-while count < my_list_len:
-    if count % 2 == 0:
-        my_list[count] = int(my_list[count])
-        count += 1
-    else:
-        count += 1
-        continue
-
-print()
-print("Числовые строки преобразованы в int: ", my_list)
-
-numbers = [i for i in my_list if type(i) == int]
-words = [i for i in my_list if type(i) == str]
-
-print()
-print("Числа: ", numbers)
-
-print()
-print("Строки: ", words)
-
-result_list = []
-
-count = 0
-index = 0
-
-for i in numbers:
-    while count < i:
-        result_list.append(words[index])
-        count += 1
-    index += 1
     count = 0
+    index = 0
 
-print()
-print(''.join(result_list))
+    for i in numbers:
+        while count < i:
+            result_list.append(words[index])
+            count += 1
+        index += 1
+        count = 0
+
+    print()
+    print("Восстановленный текст: ", ''.join(result_list))
