@@ -28,3 +28,14 @@ while count < my_list_len:
 
 print()
 print("Числовые строки преобразованы в int: ", my_list)
+
+numbers = [i for i in my_list if type(i) == int]
+words = [i for i in my_list if type(i) == str]
+
+print()
+print("Числа: ", numbers)
+
+print()
+print("Строки: ", numbers)
+
+
