@@ -2,12 +2,13 @@ import os
 
 os.system('cs||clear')
 
-text = '4a5b'
+text = '5A5B'
 
 print()
 print("Изначальный текст: ", text)
 
 my_list = []
+
 
 for char in text:
     my_list.append(char)
@@ -36,6 +37,19 @@ print()
 print("Числа: ", numbers)
 
 print()
-print("Строки: ", numbers)
+print("Строки: ", words)
 
+result_list = []
 
+count = 0
+index = 0
+
+for i in numbers:
+    while count < i:
+        result_list.append(words[index])
+        count += 1
+    index += 1
+    count = 0
+
+print()
+print(''.join(result_list))
