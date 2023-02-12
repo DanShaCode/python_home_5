@@ -178,8 +178,9 @@ def Start():
         Game(221)
     elif user_versus == 2:
         os.system('cls||clear')
-        print("Игра началась!")
+        print("Игра скоро начнется.")
         print()
+        print("Загрузка ..... ")
 
         time.sleep(2)
         
@@ -208,6 +209,33 @@ def Intro():
         os.system('cls||clear')
 
 Intro()
+
 GameType()
+
 user_versus = int(input("Введите номер режима сюда(1 или 2): "))
-Start()
+
+if user_versus == 2:
+    print()
+    user_queue = input("Нажмите Enter, чтобы подбросить монетку ... ")
+    print()
+    first_player_name = input("Введите ваше Имя первого игрока: ")
+    queue_1 = random.randint(1,2)
+    print()
+    second_player_name = input("Введите Имя второго игрока: ")
+    queue_2 = random.randint(3,4)
+    if (queue_1 == 1 and queue_2 == 3) or (queue_1 == 1 and queue_2 == 4):
+        os.system('cs||clear')
+        print("Игроком_1 является", first_player_name)
+        print()
+        print("Игроком_2 является", second_player_name)
+        time.sleep(3)
+        Start()
+    else:
+        os.system('cs||clear')
+        print("Игроком_1 является", second_player_name)
+        print()
+        print("Игроком_2 является", first_player_name) 
+        time.sleep(3)
+        Start()
+if user_versus == 1:
+    Start()
