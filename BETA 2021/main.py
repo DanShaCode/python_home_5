@@ -22,7 +22,7 @@ def Bot_Player(candy_amount):
         print()
         return player1(candy_amount)
 
-def player1 (candy_amount):
+def player1 (candy_amount,first,second):
     # Игра против Бота
     os.system('cls||clear')
     if user_versus == 1:
@@ -53,7 +53,8 @@ def player1 (candy_amount):
             print()
             print("Количество конфет на столе: ", candy_amount)
             print()
-            player_1 = int(input("Ход Игрока_1. Введите количество конфет: "))
+            print("Ход", first, "Введите количество конфет: ", end = '')
+            player_1 = int(input())
         if player_1 < 0 or player_1 > 28:
             print()
             print("Количество конфет, которые вы берете не может быть меньше 0 или больше 28!")
@@ -64,20 +65,21 @@ def player1 (candy_amount):
         else:
             candy_amount -= player_1
         if candy_amount <= 0:
-            return Game(candy_amount - 1)
+            return Game(candy_amount - 1,first,second)
         elif candy_amount > 0:
             print()
             print("Количество конфет на столе: ", candy_amount)
             print()
-            return player2(candy_amount)
+            return player2(candy_amount,first,second)
 
-def player2 (candy_amount):
+def player2 (candy_amount,first,second):
     os.system('cls||clear')
     if candy_amount > 0:
         print()
         print("Количество конфет на столе: ", candy_amount)
         print()
-        player_2 = int(input("Ход Игрока_2. Введите количество конфет: "))
+        print("Ход", first, "Введите количество конфет: ", end = '')
+        player_2 = int(input())
     if player_2 < 0 or player_2 > 28:
         print()
         print("Количество конфет, которые вы берете не может быть меньше 0 или больше 28!")
@@ -91,11 +93,11 @@ def player2 (candy_amount):
         print()
         print("Количество конфет на столе: ", candy_amount)
         print()
-        return Game(candy_amount)
+        return player1(candy_amount,first,second)
     elif candy_amount <= 0:
         return PlayerTwoWin(candy_amount)
 
-def Game (candy_amount):
+def Game (candy_amount,first,second):
     os.system('cls||clear')
     if user_versus == 1:
         if candy_amount > 0:
@@ -104,29 +106,33 @@ def Game (candy_amount):
             return
     # Игра против Игрока
     elif user_versus == 2:
-        if candy_amount > 0:
-            return player1(candy_amount)
-        elif candy_amount <= 0 and candy_amount - 1:
-            print()
-            print("Игра окончена!")
-            print()
-            print("Игрок_1 победил!")
-            time.sleep(2)
-            os.system('cls||clear')
-        elif candy_amount <= 0 and candy_amount - 2:
-            print()
-            print("Игра окончена!")
-            print()
-            print("Игрок_2 победил!")
-            time.sleep(2)
-            os.system('cls||clear')
-        elif candy_amount <= 0 and candy_amount - 3:
-            print()
-            print("Игра окончена!")
-            print()
-            print("Бот победил!")
-            time.sleep(2)
-            os.system('cls||clear')
+        if first == first_player_name:
+            if candy_amount > 0:
+                return player1(candy_amount,first,second)
+        if first == second_player_name:
+            if candy_amount > 0:
+                return player2(candy_amount,first,second)
+            elif candy_amount <= 0 and candy_amount - 1:
+                print()
+                print("Игра окончена!")
+                print()
+                print("Игрок_1 победил!")
+                time.sleep(2)
+                os.system('cls||clear')
+            elif candy_amount <= 0 and candy_amount - 2:
+                print()
+                print("Игра окончена!")
+                print()
+                print("Игрок_2 победил!")
+                time.sleep(2)
+                os.system('cls||clear')
+            elif candy_amount <= 0 and candy_amount - 3:
+                print()
+                print("Игра окончена!")
+                print()
+                print("Бот победил!")
+                time.sleep(2)
+                os.system('cls||clear')
 
 def PlayerOneWin(candy_amount):
     if candy_amount <= 0:
@@ -166,7 +172,7 @@ def GameType():
     print("2.Играть против Игрока")
     print()
 
-def Start():
+def Start(first,second):
     if user_versus == 1:
         os.system('cls||clear')
         print("Игра скоро начнется.")
@@ -175,7 +181,7 @@ def Start():
 
         time.sleep(2)
         
-        Game(221)
+        Game(221,first,second)
     elif user_versus == 2:
         os.system('cls||clear')
         print("Игра скоро начнется.")
@@ -184,7 +190,7 @@ def Start():
 
         time.sleep(2)
         
-        Game(221)
+        Game(221,first,second)
 
 def Intro():
     print()
@@ -208,6 +214,8 @@ def Intro():
     elif user_awnser == 'N' or user_awnser == 'n':
         os.system('cls||clear')
 
+os.system('cs||clear')
+
 Intro()
 
 GameType()
@@ -225,21 +233,21 @@ if user_versus == 2:
     queue_2 = random.randint(3,4)
     if (queue_1 == 1 and queue_2 == 3) or (queue_1 == 1 and queue_2 == 4):
         os.system('cs||clear')
-        print("Игроком_1 является", first_player_name)
+        print("Первым ходит", first_player_name)
         first = first_player_name
         print()
-        print("Игроком_2 является", second_player_name)
+        print("Второй ход за", second_player_name)
         second = second_player_name
         time.sleep(3)
-        Start()
+        Start(first,second)
     else:
         os.system('cs||clear')
-        print("Игроком_1 является", second_player_name)
+        print("Первым ходит", second_player_name)
         first = second_player_name
         print()
-        print("Игроком_2 является", first_player_name)
+        print("Второй ход за", first_player_name)
         second = first_player_name 
         time.sleep(3)
-        Start()
+        Start(first,second)
 if user_versus == 1:
     Start()
