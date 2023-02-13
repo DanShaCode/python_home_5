@@ -256,7 +256,7 @@ if user_versus == 2:
         Start(first,second)
 if user_versus == 1:
     print()
-    player_name = input("Введите ваше Имя игрока: ")
+    player_name = input("Введите ваше Имя: ")
     queue_1 = random.randint(1,2)
     print()
     print("Очень приятно", player_name, "! Давай сыграем в игру!")
