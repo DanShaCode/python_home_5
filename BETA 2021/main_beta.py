@@ -15,7 +15,10 @@ def Bot_Player(candy_amount,first,second):
         time.sleep(2)
         candy_amount -= bot_player
     if candy_amount <= 0:
-        return BotWin(candy_amount)
+            if second == bot_name:
+                return BotWin(candy_amount)
+            if second == player_name:
+                return BotWin(candy_amount)
     elif candy_amount > 0:
         print()
         print("Количество конфет на столе: ", candy_amount)
@@ -30,7 +33,12 @@ def player1 (candy_amount,first,second):
             print()
             print("Количество конфет на столе: ", candy_amount)
             print()
-            player_1 = int(input("Ход Игрока_1. Введите количество конфет: "))
+            if first == player_name:
+                print("Ход", first, "Введите количество конфет: ", end = '')
+                player_1 = int(input())
+            if second == player_name:
+                print("Ход", second, "Введите количество конфет: ", end = '')
+                player_1 = int(input())  
         if player_1 < 0 or player_1 > 28:
             print()
             print("Количество конфет, которые вы берете не может быть меньше 0 или больше 28!")
@@ -41,7 +49,10 @@ def player1 (candy_amount,first,second):
         else:
             candy_amount -= player_1
         if candy_amount <= 0:
-            return PlayerOneWin(candy_amount,first,second)
+            if first == player_name:
+                return PlayerOneWin(candy_amount,first,second)
+            if first == bot_name:
+                return PlayerTwoWin(candy_amount,first,second)
         elif candy_amount > 0:
             print()
             print("Количество конфет на столе: ", candy_amount)
@@ -197,7 +208,7 @@ def Intro():
     print()
     if user_awnser == 'Y' or user_awnser == 'y':
         os.system('cls||clear')
-        f = open("game2021\Game_Rules.txt", "r")
+        f = open("BETA 2021\Game_Rules.txt", "r")
         f_contents = f.read()
         print(f_contents)
         f.close()
@@ -248,8 +259,8 @@ if user_versus == 1:
     player_name = input("Введите ваше Имя игрока: ")
     queue_1 = random.randint(1,2)
     print()
-    print("Очень приятно", player_name, "! Я Бот и меня зовут Максим!")
-    bot_name = 'Максим' 
+    print("Очень приятно", player_name, "! Давай сыграем в игру!")
+    bot_name = 'Бот' 
     queue_2 = random.randint(3,4)
     print()
     user_queue = input("Нажмите Enter, чтобы подбросить монетку ... ")
