@@ -2,7 +2,7 @@ import os
 import time
 import random
 
-def Bot_Player(candy_amount):
+def Bot_Player(candy_amount,first,second):
     os.system('cls||clear')
     if candy_amount > 0:
         print()
@@ -20,7 +20,7 @@ def Bot_Player(candy_amount):
         print()
         print("Количество конфет на столе: ", candy_amount)
         print()
-        return player1(candy_amount)
+        return player1(candy_amount,first,second)
 
 def player1 (candy_amount,first,second):
     # Игра против Бота
@@ -41,12 +41,12 @@ def player1 (candy_amount,first,second):
         else:
             candy_amount -= player_1
         if candy_amount <= 0:
-            return PlayerOneWin(candy_amount)
+            return PlayerOneWin(candy_amount,first,second)
         elif candy_amount > 0:
             print()
             print("Количество конфет на столе: ", candy_amount)
             print()
-            return Bot_Player(candy_amount)
+            return Bot_Player(candy_amount,first,second)
     # Игра против Игрока       
     if user_versus == 2:
         if candy_amount > 0:
@@ -115,7 +115,7 @@ def Game (candy_amount,first,second):
     os.system('cls||clear')
     if user_versus == 1:
         if candy_amount > 0:
-            return player1(candy_amount)
+            return player1(candy_amount,first,second)
         elif candy_amount - 1:
             return
     # Игра против Игрока
@@ -244,4 +244,31 @@ if user_versus == 2:
         time.sleep(3)
         Start(first,second)
 if user_versus == 1:
-    Start()
+    print()
+    player_name = input("Введите ваше Имя игрока: ")
+    queue_1 = random.randint(1,2)
+    print()
+    print("Очень приятно", player_name, "! Я Бот и меня зовут Максим!")
+    bot_name = 'Максим' 
+    queue_2 = random.randint(3,4)
+    print()
+    user_queue = input("Нажмите Enter, чтобы подбросить монетку ... ")
+    print()
+    if (queue_1 == 1 and queue_2 == 3) or (queue_1 == 1 and queue_2 == 4):
+        os.system('cs||clear')
+        print("Первым ходит", player_name)
+        first = player_name
+        print()
+        print("Второй ход за", bot_name)
+        second = bot_name
+        time.sleep(3)
+        Start(first,second)
+    else:
+        os.system('cs||clear')
+        print("Первым ходит", bot_name)
+        first = bot_name
+        print()
+        print("Второй ход за", player_name)
+        second = player_name
+        time.sleep(3)
+        Start(first,second)
