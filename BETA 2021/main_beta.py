@@ -217,6 +217,8 @@ def Intro():
         os.system('cls||clear')
     elif user_awnser == 'N' or user_awnser == 'n':
         os.system('cls||clear')
+    else:
+        os.system('cls||clear')
 
 os.system('cs||clear')
 
@@ -227,6 +229,7 @@ GameType()
 user_versus = int(input("Введите номер режима сюда(1 или 2): "))
 
 if user_versus == 2:
+    os.system('cs||clear')
     print()
     first_player_name = input("Введите ваше Имя первого игрока: ")
     queue_1 = random.randint(1,2)
@@ -255,6 +258,7 @@ if user_versus == 2:
         time.sleep(3)
         Start(first,second)
 if user_versus == 1:
+    os.system('cs||clear')
     print()
     player_name = input("Введите ваше Имя: ")
     queue_1 = random.randint(1,2)
@@ -271,6 +275,8 @@ if user_versus == 1:
         first = player_name
         print()
         print("Второй ход за", bot_name)
+        print()
+        print('Удачной игры!')
         second = bot_name
         time.sleep(3)
         Start(first,second)
