@@ -69,7 +69,10 @@ def player1 (candy_amount,first,second):
         else:
             candy_amount -= player_1
         if candy_amount <= 0:
-            return PlayerOneWin(candy_amount,first,second)
+            if first == first_player_name:
+                return PlayerOneWin(candy_amount,first,second)
+            if first == second_player_name:
+                return PlayerTwoWin(candy_amount,first,second)
         elif candy_amount > 0:
             print()
             print("Количество конфет на столе: ", candy_amount)
@@ -103,7 +106,10 @@ def player2 (candy_amount,first,second):
         print()
         return player1(candy_amount,first,second)
     elif candy_amount <= 0:
-        return PlayerTwoWin(candy_amount,first,second)
+        if second == second_player_name:
+            return PlayerTwoWin(candy_amount,first,second)
+        if second == first_player_name:
+            return PlayerOneWin(candy_amount,first,second)
 
 def Game (candy_amount,first,second):
     os.system('cls||clear')
@@ -211,13 +217,14 @@ user_versus = int(input("Введите номер режима сюда(1 ил�
 
 if user_versus == 2:
     print()
-    user_queue = input("Нажмите Enter, чтобы подбросить монетку ... ")
-    print()
     first_player_name = input("Введите ваше Имя первого игрока: ")
     queue_1 = random.randint(1,2)
     print()
     second_player_name = input("Введите Имя второго игрока: ")
     queue_2 = random.randint(3,4)
+    print()
+    user_queue = input("Нажмите Enter, чтобы подбросить монетку ... ")
+    print()
     if (queue_1 == 1 and queue_2 == 3) or (queue_1 == 1 and queue_2 == 4):
         os.system('cs||clear')
         print("Первым ходит", first_player_name)
