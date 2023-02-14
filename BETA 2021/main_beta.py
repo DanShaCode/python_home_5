@@ -249,7 +249,7 @@ def Intro():
         print(f_contents)
         f.close()
         print()
-        input("Нажмите Enter, как будете готовы начать игру")
+        input("Нажмите Enter, как будете готовы начать игру ... ")
         os.system('cls||clear')
     elif user_awnser == 'N' or user_awnser == 'n':
         os.system('cls||clear')
