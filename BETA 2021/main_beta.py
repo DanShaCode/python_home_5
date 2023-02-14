@@ -206,10 +206,11 @@ def PlayerTwoWin(candy_amount,first,second):
 
 def GameType():
     print()
-    print("Выберите режим игры.")
+    print(" !@#$%^&* --^ ВЫБЕРИТЕ РЕЖИМ ИГРЫ ^-- *&^%$#@!")
     print()
-    print("1.Играть против ИИ")
-    print("2.Играть против Игрока")
+    print("             1.Играть против ИИ")
+    print()
+    print("           2.Играть против Игрока")
     print()
 
 def Start(first,second):
@@ -234,13 +235,13 @@ def Start(first,second):
 
 def Intro():
     print()
-    print("Добро пожаловать!")
+    print("             -^-^- Добро пожаловать! -^-^-")
     print()
-    print("Вы запустили интерактивную игру 2021!")
+    print("     >>> Вы запустили интерактивную игру 2021! <<<")
     print()
-    print("Хотите прочитать правила?")
+    print("             Хотите прочитать правила? O_0")
     print()
-    user_awnser = str(input("Введите Y/N: "))
+    user_awnser = str(input("                    Введите Y/N: "))
     print()
     if user_awnser == 'Y' or user_awnser == 'y':
         os.system('cls||clear')
@@ -262,55 +263,71 @@ Intro()
 
 GameType()
 
-user_versus = int(input("Введите номер режима сюда (1 или 2): "))
+user_versus = int(input("    Введите номер режима сюда (1 или 2): "))
 
 if user_versus == 2:
     os.system('cs||clear')
     print()
-    first_player_name = input("Введите ваше Имя первого игрока: ")
+    print()
+    first_player_name = input("        0_o .. Введите ваше Имя первого игрока: ")
     queue_1 = random.randint(1,2)
     print()
-    second_player_name = input("Введите Имя второго игрока: ")
+    second_player_name = input("        o_0 .. Введите Имя второго игрока: ")
     queue_2 = random.randint(3,4)
     print()
-    user_queue = input("Нажмите Enter, чтобы подбросить монетку ... ")
+    user_queue = input("        Нажмите Enter, чтобы подбросить монетку ... 0")
     print()
     if (queue_1 == 1 and queue_2 == 3) or (queue_1 == 1 and queue_2 == 4):
         os.system('cs||clear')
-        print("Первым ходит", first_player_name)
+        print("Судьба распорядилась следующим псевдослучайным образом!")
+        print()
+        print("(I_o) Первым ходит", first_player_name)
         first = first_player_name
         print()
-        print("Второй ход за", second_player_name)
+        print("(-_p) Второй ход за", second_player_name)
         second = second_player_name
+        print()
+        print('Удачной игры!')
         time.sleep(3)
         Start(first,second)
     else:
         os.system('cs||clear')
-        print("Первым ходит", second_player_name)
+        print("Судьба распорядилась следующим псевдослучайным образом!")
+        print()
+        print("(I_o) Первым ходит", second_player_name)
         first = second_player_name
         print()
-        print("Второй ход за", first_player_name)
+        print("(-_p) Второй ход за", first_player_name)
         second = first_player_name 
+        print()
+        print('Удачной игры!')
         time.sleep(3)
         Start(first,second)
 if user_versus == 1:
     os.system('cs||clear')
     print()
-    player_name = input("Введите ваше Имя: ")
+    player_name = input("(0_0) Введите ваше Имя: ")
     queue_1 = random.randint(1,2)
     print()
-    print("Очень приятно", player_name, "! Давай сыграем в игру!")
+    print("Очень приятно", player_name, "! Я бот и меня зовут - Бот. Давай сыграем в игру!")
     bot_name = 'Бот' 
     queue_2 = random.randint(3,4)
     print()
-    user_queue = input("Нажмите Enter, чтобы подбросить монетку ... ")
+    user_queue = input("Нажмите Enter, чтобы подбросить монетку ... 0")
+    os.system('cs||clear')
+    print()
+    print("Хеееей. Погоди .... Ты уверен, что хочешь сыграть со мной? Я не очень силен в играх ..... ")
+    print()
+    enter_game = input("Как будешь готов выйграть меня нажми Enter ...... ")
     print()
     if (queue_1 == 1 and queue_2 == 3) or (queue_1 == 1 and queue_2 == 4):
         os.system('cs||clear')
-        print("Первым ходит", player_name)
+        print("Судьба распорядилась следующим псевдослучайным образом!")
+        print()
+        print("(I_o) Первым ходит", player_name)
         first = player_name
         print()
-        print("Второй ход за", bot_name)
+        print("(-_p) Второй ход за", bot_name)
         print()
         print('Удачной игры!')
         second = bot_name
@@ -318,10 +335,14 @@ if user_versus == 1:
         Start(first,second)
     else:
         os.system('cs||clear')
-        print("Первым ходит", bot_name)
+        print("Судьба распорядилась следующим псевдослучайным образом!")
+        print()
+        print("(I_o) Первым ходит", bot_name)
         first = bot_name
         print()
-        print("Второй ход за", player_name)
+        print("(-_p) Второй ход за", player_name)
         second = player_name
+        print()
+        print('Удачной игры!')
         time.sleep(3)
         Start(first,second)

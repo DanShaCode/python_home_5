@@ -40,7 +40,7 @@ def Game_Round(start_board,player_start_first,player_one_name,player_two_name):
                 print("Ничья!")
                 time.sleep(2)
                 os.system('cs||clear')    
-            elif second_check == False:
+            elif second_check == False and no_win_check_second == False:
                 Game_Round(second_board,player_start_first,player_one_name,player_two_name)
     # Второй игрок
     os.system('cs||clear')
@@ -80,5 +80,5 @@ def Game_Round(start_board,player_start_first,player_one_name,player_two_name):
                 print("Ничья!")
                 time.sleep(2)
                 os.system('cs||clear')    
-            elif first_check == False:
+            elif first_check == False and no_win_check_first == False:
                 Game_Round(first_board,player_start_first,player_one_name,player_two_name)
