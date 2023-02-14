@@ -42,14 +42,23 @@ def player1 (candy_amount,first,second):
                 player_1 = int(input())
             if second == player_name:
                 print("Ход", second, "Введите количество конфет: ", end = '')
-                player_1 = int(input())  
+                player_1 = int(input())
+        # Ограничение на взятие конфет если их <= 28
+        if candy_amount <= 28:
+            if player_1 > candy_amount:
+                print()
+                print("Вы не можете взять конфет больше, чем лежит на столе!")
+                temp = candy_amount
+                candy_amount = 0
+                time.sleep(2)
+                return player1(temp,first,second)  
         if player_1 < 0 or player_1 > 28:
             print()
             print("Количество конфет, которые вы берете не может быть меньше 0 или больше 28!")
             temp = candy_amount
             candy_amount = 0
             time.sleep(2)
-            return player1(temp)
+            return player1(temp,first,second)
         else:
             candy_amount -= player_1
         if candy_amount <= 0:
@@ -73,7 +82,16 @@ def player1 (candy_amount,first,second):
                 player_1 = int(input())
             if first == second_player_name:
                 print("Ход", second, "Введите количество конфет: ", end = '')
-                player_1 = int(input())  
+                player_1 = int(input())
+        # Ограничение на взятие конфет если их <= 28
+        if candy_amount <= 28:
+            if player_1 > candy_amount:
+                print()
+                print("Вы не можете взять конфет больше, чем лежит на столе!")
+                temp = candy_amount
+                candy_amount = 0
+                time.sleep(2)
+                return player1(temp,first,second)  
         if player_1 < 0 or player_1 > 28:
             print()
             print("Количество конфет, которые вы берете не может быть меньше 0 или больше 28!")
@@ -105,14 +123,23 @@ def player2 (candy_amount,first,second):
             player_2 = int(input())
         if first == second_player_name:
             print("Ход", first, "Введите количество конфет: ", end = '')
-            player_2 = int(input()) 
+            player_2 = int(input())
+        # Ограничение на взятие конфет если их <= 28
+        if candy_amount <= 28:
+            if player_2 > candy_amount:
+                print()
+                print("Вы не можете взять конфет больше, чем лежит на столе!")
+                temp = candy_amount
+                candy_amount = 0
+                time.sleep(2)
+                return player2(temp,first,second)  
     if player_2 < 0 or player_2 > 28:
         print()
         print("Количество конфет, которые вы берете не может быть меньше 0 или больше 28!")
         temp = candy_amount
         candy_amount = 0
         time.sleep(2)
-        return player2(temp)
+        return player2(temp,first,second)
     else:
         candy_amount -= player_2
     if candy_amount > 0:
