@@ -13,8 +13,8 @@ def Bot_Player(candy_amount,first,second):
         # Органичение на взятие конфет
         if candy_amount > 28:
             bot_player = random.randint(0, 28)
-        else:
-            bot_player = random.randint(0, candy_amount)
+        elif candy_amount <= 28:
+            bot_player = candy_amount
         print("Бот взял ", bot_player, "конфет." )
         time.sleep(2)
         candy_amount -= bot_player
@@ -30,7 +30,7 @@ def Bot_Player(candy_amount,first,second):
         return player1(candy_amount,first,second)
 
 def player1 (candy_amount,first,second):
-    # Игра против Бота
+    # Игра против Бота ===============================================
     os.system('cls||clear')
     if user_versus == 1:
         if candy_amount > 0:
@@ -71,7 +71,7 @@ def player1 (candy_amount,first,second):
             print("Количество конфет на столе: ", candy_amount)
             print()
             return Bot_Player(candy_amount,first,second)
-    # Игра против Игрока       
+    # Игра против Игрока  ===========================================    
     if user_versus == 2:
         if candy_amount > 0:
             print()
