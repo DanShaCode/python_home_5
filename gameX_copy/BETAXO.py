@@ -5,7 +5,16 @@ from infrastruct.players import *
 from infrastruct.player_heat import*
 
 start_board = Introduction()
-player_one_name = input("Введите Имя первого игрока: ")
-player_two_name = input("Введите Имя второго игрока: ")
+print()
+print()
+player_one_name = input("       -=XOXOXO=- Введите Имя первого игрока: ")
+print()
+player_two_name = input("       -=XOXOXO=- Введите Имя второго игрока: ")
 player_start_first = Player_Heat(player_one_name, player_two_name)
+print()
+user_heat = input("        Нажмите Enter, чтобы подбросить монетку ... ")
+print()
+print("        Первый ход за", player_start_first, '!')
+print()
+time.sleep(2)
 Game_Round(start_board,player_start_first,player_one_name,player_two_name)

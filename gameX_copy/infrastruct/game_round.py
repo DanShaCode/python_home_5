@@ -13,7 +13,7 @@ def Game_Round(start_board,player_start_first,player_one_name,player_two_name):
         if first_check == True:
             Board_Print(first_board)
             print()
-            print("Игрок_1 победил!")
+            print(player_one_name,"победил!")
             time.sleep(2)
             os.system('cs||clear')
         if no_win_check_first == True:
@@ -31,7 +31,7 @@ def Game_Round(start_board,player_start_first,player_one_name,player_two_name):
             if second_check == True:
                 Board_Print(second_board)
                 print()
-                print("Игрок_2 победил!")
+                print(player_two_name,"победил!")
                 time.sleep(2)
                 os.system('cs||clear')
             if no_win_check_second == True:
@@ -52,7 +52,7 @@ def Game_Round(start_board,player_start_first,player_one_name,player_two_name):
         if second_check == True:
             Board_Print(second_board)
             print()
-            print("Игрок_1 победил!")
+            print(player_two_name,"победил!")
             time.sleep(2)
             os.system('cs||clear')
         if no_win_check_second == True:
@@ -71,7 +71,7 @@ def Game_Round(start_board,player_start_first,player_one_name,player_two_name):
             if first_check == True:
                 Board_Print(first_board)
                 print()
-                print("Игрок_1 победил!")
+                print(player_one_name,"победил!")
                 time.sleep(2)
                 os.system('cs||clear')
             if no_win_check_first == True:

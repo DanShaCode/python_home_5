@@ -16,20 +16,20 @@ def First_Player(board, player_one_name):
             index += 1
     print()
     print()
-    print("Ход", player_one_name)
+    print("Ход", player_one_name, "O_X")
     print()
-    row = int(input("Введите номер строки: "))
+    row = int(input(" -=X-O=- Введите номер строки: "))
     if row < 1 or row > 3:
         print()
         print("Ошбика ввода. Введите, пожалуйста, номер строки от 1 до 3.")
         time.sleep(2)
         return First_Player(board)
-    col = int(input("Введите номер столбца: "))
+    col = int(input(" -=X-O=- Введите номер столбца: "))
     if col < 1 or col > 3:
         print()
         print("Ошбика ввода. Введите, пожалуйста, номер столбца от 1 до 3.")
         time.sleep(2)
-        return First_Player(board)
+        return First_Player(board,player_one_name)
     for i in board:
         if row == 1 and col == 1:
             if board[0] == '-':
@@ -37,63 +37,63 @@ def First_Player(board, player_one_name):
             elif board [0] == 'O':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return First_Player(board,player_one_name)
         if row == 1 and col == 2:
             if board[1] == '-':
                 board[1] = 'X'
             elif board [1] == 'O':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return First_Player(board,player_one_name)
         if row == 1 and col == 3:
             if board[2] == '-':
                 board[2] = 'X'
             elif board [2] == 'O':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return First_Player(board,player_one_name)
         if row == 2 and col == 1:
             if board[3] == '-':
                 board[3] = 'X'
             elif board [3] == 'O':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return First_Player(board,player_one_name)
         if row == 2 and col == 2:
             if board[4] == '-':
                 board[4] = 'X'
             elif board [4] == 'O':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return First_Player(board,player_one_name)
         if row == 2 and col == 3:
             if board[5] == '-':
                 board[5] = 'X'
             elif board [5] == 'O':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return First_Player(board,player_one_name)
         if row == 3 and col == 1:
             if board[6] == '-':
                 board[6] = 'X'
             elif board [6] == 'O':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return First_Player(board,player_one_name)
         if row == 3 and col == 2:
             if board[7] == '-':
                 board[7] = 'X'
             elif board [7] == 'O':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return First_Player(board,player_one_name)
         if row == 3 and col == 3:
             if board[8] == '-':
                 board[8] = 'X'
             elif board [8] == 'O':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board) 
+                return First_Player(board,player_one_name) 
     return board
 
 def Second_PLayer(board, player_two_name):
@@ -110,20 +110,20 @@ def Second_PLayer(board, player_two_name):
             index += 1
     print()
     print()
-    print("Ход", player_two_name)
+    print("Ход", player_two_name, "X_O")
     print()
-    row = int(input("Введите номер строки: "))
+    row = int(input(" -=X-O=- Введите номер строки: "))
     if row < 1 or row > 3:
         print()
         print("Ошбика ввода. Введите, пожалуйста, номер строки от 1 до 3.")
         time.sleep(2)
-        return Second_PLayer(board)
-    col = int(input("Введите номер столбца: "))
+        return Second_PLayer(board,player_two_name)
+    col = int(input(" -=X-O=- Введите номер столбца: "))
     if col < 1 or col > 3:
         print()
         print("Ошбика ввода. Введите, пожалуйста, номер столбца от 1 до 3.")
         time.sleep(2)
-        return Second_PLayer(board)
+        return Second_PLayer(board,player_two_name)
     for i in board:
         if row == 1 and col == 1:
             if board[0] == '-':
@@ -131,63 +131,63 @@ def Second_PLayer(board, player_two_name):
             elif board [0] == 'X':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return Second_PLayer(board,player_two_name)
         if row == 1 and col == 2:
             if board[1] == '-':
                 board[1] = 'O'
             elif board [1] == 'X':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return Second_PLayer(board,player_two_name)
         if row == 1 and col == 3:
             if board[2] == '-':
                 board[2] = 'O'
             elif board [2] == 'X':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return Second_PLayer(board,player_two_name)
         if row == 2 and col == 1:
             if board[3] == '-':
                 board[3] = 'O'
             elif board [3] == 'X':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return Second_PLayer(board,player_two_name)
         if row == 2 and col == 2:
             if board[4] == '-':
                 board[4] = 'O'
             elif board [4] == 'X':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return Second_PLayer(board,player_two_name)
         if row == 2 and col == 3:
             if board[5] == '-':
                 board[5] = 'O'
             elif board [5] == 'X':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return Second_PLayer(board,player_two_name)
         if row == 3 and col == 1:
             if board[6] == '-':
                 board[6] = 'O'
             elif board [6] == 'X':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board)
+                return Second_PLayer(board,player_two_name)
         if row == 3 and col == 2:
             if board[7] == '-':
                 board[7] = 'O'
             elif board [7] == 'X':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board,player_two_name)
+                return Second_PLayer(board,player_two_name)
         if row == 3 and col == 3:
             if board[8] == '-':
                 board[8] = 'O'
             elif board [8] == 'X':
                 print("Эта клетка занята!")
                 time.sleep(2)
-                return First_Player(board) 
+                return Second_PLayer(board,player_two_name) 
     return board
 
 def First_Win_Check(board):
