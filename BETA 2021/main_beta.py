@@ -10,7 +10,11 @@ def Bot_Player(candy_amount,first,second):
         print()
         print("Ход Бота.")
         print()
-        bot_player = random.randint(0, 28)
+        # Органичение на взятие конфет
+        if candy_amount > 28:
+            bot_player = random.randint(0, 28)
+        else:
+            bot_player = random.randint(0, candy_amount)
         print("Бот взял ", bot_player, "конфет." )
         time.sleep(2)
         candy_amount -= bot_player
@@ -124,9 +128,14 @@ def player2 (candy_amount,first,second):
 
 def Game (candy_amount,first,second):
     os.system('cls||clear')
+    # Игра протв Бота
     if user_versus == 1:
-        if candy_amount > 0:
-            return player1(candy_amount,first,second)
+        if first == player_name:
+            if candy_amount > 0:
+                return player1(candy_amount,first,second)
+        if first == bot_name:
+            if candy_amount > 0:
+                return Bot_Player(candy_amount,first,second)
         elif candy_amount - 1:
             return
     # Игра против Игрока
@@ -226,7 +235,7 @@ Intro()
 
 GameType()
 
-user_versus = int(input("Введите номер режима сюда(1 или 2): "))
+user_versus = int(input("Введите номер режима сюда (1 или 2): "))
 
 if user_versus == 2:
     os.system('cs||clear')
