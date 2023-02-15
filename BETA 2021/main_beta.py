@@ -180,7 +180,7 @@ def PlayerOneWin(candy_amount, first,second):
         print()
         print("Игра окончена.")
         print()
-        print(first,"победил!")
+        print(first,"победил(а)!")
         time.sleep(2)
         os.system('cls||clear')
 
@@ -200,7 +200,7 @@ def PlayerTwoWin(candy_amount,first,second):
         print()
         print("Игра окончена.")
         print()
-        print(second, "победил!")
+        print(second, "победил(а)!")
         time.sleep(2)
         os.system('cls||clear')
 
@@ -288,7 +288,7 @@ if user_versus == 2:
         second = second_player_name
         print()
         print('Удачной игры!')
-        time.sleep(3)
+        time.sleep(4)
         Start(first,second)
     else:
         os.system('cs||clear')
@@ -301,7 +301,7 @@ if user_versus == 2:
         second = first_player_name 
         print()
         print('Удачной игры!')
-        time.sleep(3)
+        time.sleep(4)
         Start(first,second)
 if user_versus == 1:
     os.system('cs||clear')
@@ -331,7 +331,7 @@ if user_versus == 1:
         print()
         print('Удачной игры!')
         second = bot_name
-        time.sleep(3)
+        time.sleep(4)
         Start(first,second)
     else:
         os.system('cs||clear')
@@ -344,5 +344,5 @@ if user_versus == 1:
         second = player_name
         print()
         print('Удачной игры!')
-        time.sleep(3)
+        time.sleep(4)
         Start(first,second)
