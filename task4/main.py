@@ -4,7 +4,9 @@ from algorythm.reverse_RLE import *
 
 os.system('cs||clear')
 print()
-text = str(input("Введите, пожалуйста, текст: "))
+print("Данная программа сжимает данные через алгоритм RLE, а затем эти данные восстанавливает.")
+print()
+text = str(input("Введите, пожалуйста, текст, который ВЫ хотите сжать: "))
 
 rls_text = Run_Length_Encoding(text)
 
